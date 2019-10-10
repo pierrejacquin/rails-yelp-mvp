@@ -1,0 +1,13 @@
+<h1>All the reviews</h1>
+
+
+<% @reviews.each do |review| %>
+  <ul>
+    <h2><%= review.Restaurant.name %></h2>
+    <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
+    <%= link_to "Delete", restaurant_path(restaurant), class: "btn btn-primary",
+      method: :delete,
+      data: { confirm: "Are you sure?" }
+      %>
+  </ul>
+<% end %>
